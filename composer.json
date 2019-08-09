@@ -1,0 +1,19 @@
+{
+    "name": "ailixter/gears.value",
+    "description": "TODO",
+    "require": {
+        "php": "^7.1"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Ailixter\\Gears\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "ailixter",
+            "email": "ailixter@gmail.com"
+        }
+    ]
+}
