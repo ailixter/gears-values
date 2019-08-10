@@ -1,5 +1,7 @@
 # gears-values
-The project that gears values
+The project that gears values.
+
+Value class implements [value, error] pattern.
 
 ```php
     use Ailixter\Gears\ArrayValue;
