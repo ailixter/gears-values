@@ -1,7 +1,14 @@
 # gears-values
 The project that gears values.
 
-Value class implements [value, error] pattern.
+1. Value class implements [value, error] pattern.
+1. It proposeses simple and clear ValueInterface.
+1. It provides protected validation method to override.
+1. And simple rules
+    - value may only be constructed, not set
+    - invalid value cannot be constructed
+    - value with errors cannot be returned
+    - you can get both if you're willing to
 
 ```php
     use Ailixter\Gears\ArrayValue;
