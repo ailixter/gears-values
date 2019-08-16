@@ -1,6 +1,6 @@
 {
     "name": "ailixter/gears-value",
-    "description": "TODO",
+    "description": "The project that gears values",
     "require": {
         "php": "^7.1"
     },
