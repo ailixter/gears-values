@@ -41,18 +41,18 @@ The project that gears values.
         } else {
             $result = $int->getValue();
         }
-        echo $result + 1;
+        echo $result - 1;
     }
 
     function wantNoUnexpected(int $int)
     {
-        echo $int + 1;
+        echo $int - 1;
     }
 
-    readyForUnexpected(calculate(8));       // 65
-    readyForUnexpected(calculate(10));      // 82
+    readyForUnexpected(calculate(8));       // 63
+    readyForUnexpected(calculate(10));      // 80
 
-    wantNoUnexpected(calculate(8)->get());  // 65
+    wantNoUnexpected(calculate(8)->get());  // 63
     wantNoUnexpected(calculate(10)->get()); // exception - too big
 
     echo calculate(0);                      // exception - not positive
