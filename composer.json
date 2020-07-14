@@ -2,7 +2,8 @@
     "name": "ailixter/gears-value",
     "description": "The project that gears values",
     "require": {
-        "php": "^7.1"
+        "php": "^7.1",
+        "ailixter/gears": "^0.1"
     },
     "license": "MIT",
     "autoload": {
