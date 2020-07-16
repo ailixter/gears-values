@@ -55,6 +55,18 @@ class Value implements ValueInterface
     }
 
     /**
+     * Set raw stored value.
+     *
+     * @param mixed $value
+     * @return Value
+     */
+    protected function setValue($value)
+    {
+        $this->value = $value;
+        return $this;
+    }
+
+    /**
      * Validates the value.
      * Noop by default (to be overridden).
      *
