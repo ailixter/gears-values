@@ -20,7 +20,7 @@ The project that gears values.
         protected function validate()
         {
             if ($this->getValue() < 1) {
-                $this->addError('value', 'is not positive')
+                $this->addError('value', 'is not positive');
             }
         }
     }
@@ -28,7 +28,7 @@ The project that gears values.
     function calculate(int $int): Positive
     {
         $result = new Positive($int * $int);
-        if ($result=>getValue() > 81) {
+        if ($result->getValue() > 81) {
             $result->addError('value', 'too big');
         }
         return $result;
@@ -53,8 +53,18 @@ The project that gears values.
     readyForUnexpected(calculate(10));      // 80
 
     wantNoUnexpected(calculate(8)->get());  // 63
-    wantNoUnexpected(calculate(10)->get()); // exception - too big
 
-    echo calculate(0);                      // exception - not positive
+    try {
+        wantNoUnexpected(calculate(10)->get()); // exception - too big
+    } catch (Ailixter\Gears\Exceptions\ValueException $ve) {
+        echo PHP_EOL, $ve->getMessage(), ': ';
+        print_r($ve->getValue()->getErrors());
+    }
+    try {
+        calculate(0);                      // exception - not positive
+    } catch (Ailixter\Gears\Exceptions\ValueException $ve) {
+        echo PHP_EOL, $ve->getMessage(), ': ';
+        print_r($ve->getValue()->getErrors());
+    }
 ```
 
