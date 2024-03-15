@@ -72,8 +72,8 @@ class MainTest extends TestCase
         } catch (ValueException $e) {
             $value = $e->getValue();
             $this->assertEquals((string)$value, $value->getErrors()['invalid']);
-            $this->assertContains((string)$value, $e->getMessage());
-            $this->assertContains('construct', $e->getMessage());
+            $this->assertStringContainsString((string)$value, $e->getMessage());
+            $this->assertStringContainsString('construct', $e->getMessage());
         }
     }
 
